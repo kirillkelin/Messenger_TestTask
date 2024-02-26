@@ -47,5 +47,12 @@ async def main():
     await asyncio.gather(*tasks)
 
 
+"""
+Result:
+INFO:__main__:Time for 5000 requests: 34.7779757976532
+INFO:__main__:Time for 1 request: 0.00695559515953064
+INFO:__main__:QPS: 143.76914944938795
+"""
+
 if __name__ == "__main__":
     asyncio.run(main())
