@@ -1,0 +1,31 @@
+version: "3.9"
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: messages_db
+    environment:
+      POSTGRES_DB: "messages_test"
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "postgres"
+      PGDATA: "/var/lib/postgresql/data/pgdata"
+    volumes:
+      - messages_db-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  pgadmin:
+    image: dpage/pgadmin4:7.2
+    container_name: pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "pin11kelinkirill@gmail.com"
+      PGADMIN_DEFAULT_PASSWORD: "kelinkirill"
+      PGADMIN_CONFIG_SERVER_MODE: "False"
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
+    ports:
+      - "5050:80"
+    restart: unless-stopped
+
+volumes:
+  messages_db-data:
+  pgadmin-data:

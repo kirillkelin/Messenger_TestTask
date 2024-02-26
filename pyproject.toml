@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "messenger"
+version = "0.1.0"
+description = ""
+authors = ["kirillkelin <kelinkirill@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.110.0"
+uvicorn = {extras = ["standart"], version = "^0.27.1"}
+sqlalchemy = {extras = ["asyncio"], version = "^2.0.27"}
+pydantic-settings = "^2.2.1"
+asyncpg = "^0.29.0"
+httpx = "^0.27.0"
+logging = "^0.4.9.6"
+faker = "^23.2.1"
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.2.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
